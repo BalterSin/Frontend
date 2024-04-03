@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 函数</title>
+</head>
+<body>
+    <script>
+        function greet(){
+            console.log("Hello World");
+        }
+        greet();
+
+        function greet_with_return(){
+            return "Hello World";
+        }
+        console.log(greet_with_return());
+        let a = greet_with_return();
+        console.log(a);
+
+        function greet_with_parameter(name){
+            return "Hello " + name;
+        }
+        console.log(greet_with_parameter("John"));
+
+
+        // 作用域
+
+        let global_var = "全局变量";
+        function local_var_function(){
+            let local_var = "局部变量";
+            console.log(global_var);
+            console.log(local_var);
+        }
+        local_var_function();
+    </script>
+</body>
+</html>
