@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端 rem 适配原理</title>
+    <style>
+        /* html{
+            font-size: 20px;
+        } */
+        .box1{
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+            margin-bottom: 50px;
+        }
+
+        .box2{
+            width: 5rem;
+            height: 3rem;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <script>
+        // 根据设备宽度计算html标签的font-size属性值（设备宽度1/10）
+        function resetHTMLFontSize(){
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+        }
+        resetHTMLFontSize();
+
+
+        // 当设备宽度发生变化时，重新计算html标签的font-size属性值
+        window.onresize = function(){
+            resetHTMLFontSize();
+        }
+    </script>
+</body>
+</html>

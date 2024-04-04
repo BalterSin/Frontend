@@ -6,6 +6,41 @@
     <title>DOM</title>
 </head>
 <body>
-    
+    <div id="box1">这是一个id选择器标签</div>
+    <div class="box2">这是一个类选择器标签</div>
+    <div >这是一个普通的div标签</div>
+    <button>点击按钮</button>
+
+    <script>
+        var element_id = document.getElementById("box1");
+        console.log(element_id);
+
+        var element_class = document.getElementsByClassName("box2")[0];
+        console.log(element_class);
+
+        var element_tag = document.getElementsByTagName("div")[2];
+        console.log(element_tag);
+
+        element_id.innerHTML =     '<a href="#">跳转链接</a>';
+        element_class.innerText = "修改类选择器标签文本内容";     
+        
+        element_tag.style.color = "red";
+        element_tag.style.fontSize = "20px";
+
+        // DOM 属性绑定事件
+        var button = document.getElementsByTagName("button")[0];
+        console.log(button);
+
+        // button.onclick = function(){
+        //     alert("点击了按钮");
+        // }
+
+        button.addEventListener("click", click_button);
+
+        function click_button(){
+            alert("通过函数触发按键");
+        }
+
+    </script>
 </body>
 </html>
